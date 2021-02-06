@@ -13,7 +13,8 @@ class MyButton extends StatelessWidget {
         child: Text(
           this.text,
           style: TextStyle(
-            fontWeight: FontWeight.bold
+            fontWeight: FontWeight.bold,
+            fontSize: 20
           ),
         ),
         color: Colors.orange,

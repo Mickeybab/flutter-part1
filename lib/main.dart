@@ -33,7 +33,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   static List<Widget> _widgetOptions = <Widget>[
     Home(),
     Profile(),
-    Settings()
+    SettingsScreen()
   ];
 
   void _onItemTapped(int index) {
