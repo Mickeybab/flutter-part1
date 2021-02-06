@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:developer';
 
 import 'components/home.dart';
 import 'components/profile.dart';
