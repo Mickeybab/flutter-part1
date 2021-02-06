@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_epitech/components/soundRow.dart';
-import 'soundRow.dart';
+import '../components/soundRow.dart';
 
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return 
-    Container(
+    return Container(
       color: Color(0xFFBD40),
       constraints: BoxConstraints.expand(),
       child: Column(

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'components/home.dart';
-import 'components/profile.dart';
-import 'components/settings.dart';
-import 'components/global.dart' as global;
+import 'screens/home.dart';
+import 'screens/profile.dart';
+import 'screens/settings.dart';
+import 'config/global.dart' as global;
 
 void main() async {
   runApp(MyApp());

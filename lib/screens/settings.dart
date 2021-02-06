@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:custom_switch/custom_switch.dart';
 
-import 'global.dart' as global;
+import '../config/global.dart' as global;
 
 class SettingsScreen extends StatefulWidget {
   @override

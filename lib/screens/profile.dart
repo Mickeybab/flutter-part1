@@ -2,8 +2,8 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 
-import 'profileImage.dart';
-import 'button.dart';
+import '../components/profileImage.dart';
+import '../components/button.dart';
 
 class Profile extends StatelessWidget {
   _changePicture() {
