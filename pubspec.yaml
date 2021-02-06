@@ -29,6 +29,7 @@ dependencies:
   path:
   device_info: ^0.4.0+1
   platform: ^2.2.1
+  google_sign_in: ^4.5.9
 
 
 
@@ -45,6 +46,9 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
+
+  assets:
+    - assets/img/profilepicture.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

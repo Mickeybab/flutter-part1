@@ -8,8 +8,8 @@ class MyButton extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return (
-      FlatButton(
+    return Container(
+      child: FlatButton(
         child: Text(
           this.text,
           style: TextStyle(
