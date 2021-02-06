@@ -46,8 +46,12 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Epitech'),
-        backgroundColor: Colors.amber[800],
+        title: const Text('Epitech', style: TextStyle(
+          color: Colors.orange,
+          fontWeight: FontWeight.bold
+        ),),
+        backgroundColor: Color(0xFFBD40),
+        elevation: 0,
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
@@ -68,7 +72,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: Colors.white,
+        backgroundColor: Colors.orange,
         onTap: _onItemTapped,
       ),
     );

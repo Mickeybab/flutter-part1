@@ -10,12 +10,16 @@ class MyButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: FlatButton(
-        child: Text(
-          this.text,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 20
+        child: Padding(
+          child: Text(
+            this.text,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+              color: Colors.white
+            ),
           ),
+          padding: EdgeInsets.all(10.0),
         ),
         color: Colors.orange,
         onPressed: this.onPress,
