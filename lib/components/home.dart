@@ -7,7 +7,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return 
     Container(
-      color: Colors.purple[600],
+      color: Color(0xFFBD40),
       constraints: BoxConstraints.expand(),
       child: Column(
         children: <Widget>[
