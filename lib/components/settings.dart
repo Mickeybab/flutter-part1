@@ -5,9 +5,10 @@ class Settings extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.blue[600],
-      // Text(
-      //   'My settings',
-      // );
+      constraints: BoxConstraints.expand(),
+      child: Text(
+        'My settings',
+      )
     );
   }
 }

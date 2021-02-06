@@ -6,9 +6,10 @@ class Profile extends StatelessWidget {
     return 
     Container(
       color: Colors.purple[600],
-      // Text(
-      //   'My profile',
-      // );
+      constraints: BoxConstraints.expand(),
+      child: Text(
+        'My profile',
+      )
     );
   }
 }

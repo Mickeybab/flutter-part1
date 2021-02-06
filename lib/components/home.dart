@@ -6,9 +6,10 @@ class Home extends StatelessWidget {
     return 
     Container(
       color: Colors.amber[600],
-      // Text(
-      //   'My home',
-      // );
+      constraints: BoxConstraints.expand(),
+      child: Text(
+        'My home',
+      )
     );
   }
 }
