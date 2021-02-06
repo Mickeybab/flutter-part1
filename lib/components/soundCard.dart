@@ -16,17 +16,12 @@ class SoundCard extends StatelessWidget {
                   padding: EdgeInsets.all(10.0),
                   decoration: new BoxDecoration(
                     color: Colors.blue,
-                    borderRadius: new BorderRadius.only(
-                      topLeft: const Radius.circular(20),
-                      topRight: const Radius.circular(20),
-                      bottomLeft: const Radius.circular(20),
-                      bottomRight: const Radius.circular(20),
-                    ),
+                    borderRadius: BorderRadius.circular(20.0),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black,
-                        spreadRadius: 1,
-                        blurRadius: 3,
+                        spreadRadius: 0,
+                        blurRadius: 2,
                         offset: Offset(2, 2), // changes position of shadow
                       ),
                     ],
@@ -37,7 +32,10 @@ class SoundCard extends StatelessWidget {
                     elevation: 0,
                     child: Column(
                       children: <Widget>[
-                        Text(soundTitle),
+                        Text(
+                          soundTitle,     
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
                         Container(
                           width: 40,
                           height: 40,
@@ -48,8 +46,8 @@ class SoundCard extends StatelessWidget {
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.black,
-                                spreadRadius: 1,
-                                blurRadius: 3,
+                                spreadRadius: 0,
+                                blurRadius: 2,
                                 offset: Offset(2, 2), // changes position of shadow
                               ),
                             ],
