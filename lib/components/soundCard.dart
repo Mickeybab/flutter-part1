@@ -57,7 +57,11 @@ class SoundCard extends StatelessWidget {
                             onTap: () {
                               player.play(soundFile);
                             },
-                            child: Icon(Icons.play_arrow, size: 30),
+                            child: Icon(
+                              Icons.play_arrow,
+                              size: 30,
+                              color: Colors.black,
+                            ),
                           ),
                         ),
                       ],
