@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'components/home.dart';
+import 'components/profile.dart';
+import 'components/settings.dart';
 
 void main() => runApp(MyApp());
 
 /// This is the main application widget.
 class MyApp extends StatelessWidget {
-  static const String _title = 'Flutter Code Sample';
+  static const String _title = 'Epitech';
 
   @override
   Widget build(BuildContext context) {
@@ -26,21 +29,11 @@ class MyStatefulWidget extends StatefulWidget {
 /// This is the private State class that goes with MyStatefulWidget.
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 1: Business',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: School',
-      style: optionStyle,
-    ),
+
+  static List<Widget> _widgetOptions = <Widget>[
+    Home(),
+    Profile(),
+    Settings()
   ];
 
   void _onItemTapped(int index) {
@@ -53,7 +46,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('BottomNavigationBar Sample'),
+        title: const Text('Epitech'),
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
