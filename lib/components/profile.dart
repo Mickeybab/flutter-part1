@@ -3,8 +3,12 @@ import 'package:flutter/material.dart';
 class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Text(
-      'My profile',
+    return 
+    Container(
+      color: Colors.purple[600],
+      // Text(
+      //   'My profile',
+      // );
     );
   }
 }
