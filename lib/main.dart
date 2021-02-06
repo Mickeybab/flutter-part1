@@ -1,19 +1,41 @@
 import 'package:flutter/material.dart';
+import 'dart:developer';
+
 import 'components/home.dart';
 import 'components/profile.dart';
 import 'components/settings.dart';
+import 'components/global.dart' as global;
 
-void main() => runApp(MyApp());
+void main() async {
+  runApp(MyApp());
+}
 
 /// This is the main application widget.
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  MyAppState createState() => MyAppState();
+}
+
+class MyAppState extends State<MyApp> {
   static const String _title = 'Epitech';
+
+  @override
+  void initState() {
+    super.initState();
+    global.currentTheme.addListener(() {
+      log('change');
+      setState(() {});
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: _title,
       home: MyStatefulWidget(),
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
+      themeMode: global.currentTheme.currentTheme(),
     );
   }
 }
@@ -46,11 +68,11 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Epitech', style: TextStyle(
-          color: Colors.orange,
-          fontWeight: FontWeight.bold,
-          fontSize: 30
-        ),),
+        title: const Text(
+          'Epitech',
+          style: TextStyle(
+              color: Colors.orange, fontWeight: FontWeight.bold, fontSize: 30),
+        ),
         backgroundColor: Color(0xFFBD40),
         elevation: 0,
       ),
