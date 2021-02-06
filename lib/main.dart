@@ -23,7 +23,6 @@ class MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     global.currentTheme.addListener(() {
-      log('change');
       setState(() {});
     });
   }
@@ -33,8 +32,8 @@ class MyAppState extends State<MyApp> {
     return MaterialApp(
       title: _title,
       home: MyStatefulWidget(),
-      theme: ThemeData.light(),
-      darkTheme: ThemeData.dark(),
+      theme: global.lightTheme,
+      darkTheme: global.darkTheme,
       themeMode: global.currentTheme.currentTheme(),
     );
   }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:custom_switch/custom_switch.dart';
-import 'dart:developer';
 
 import 'global.dart' as global;
 
@@ -44,10 +43,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ),
                 Text(
                   'Dark Mode',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
                 ),
               ],
             ),
