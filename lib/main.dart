@@ -48,7 +48,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       appBar: AppBar(
         title: const Text('Epitech', style: TextStyle(
           color: Colors.orange,
-          fontWeight: FontWeight.bold
+          fontWeight: FontWeight.bold,
+          fontSize: 30
         ),),
         backgroundColor: Color(0xFFBD40),
         elevation: 0,
