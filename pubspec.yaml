@@ -49,6 +49,10 @@ flutter:
 
   assets:
     - assets/img/profilepicture.png
+    - assets/sound/GeeseBeat.mp3
+    - assets/sound/TurtleMoan.wav
+    - assets/sound/Knock.wav
+    - assets/sound/funnySounds.wav
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

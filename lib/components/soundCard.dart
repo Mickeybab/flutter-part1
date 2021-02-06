@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:audioplayers/audio_cache.dart';
 
 class SoundCard extends StatelessWidget {
-  final String data;
+  final String soundTitle;
+  final String soundFile;
   final player = AudioCache();
 
-  SoundCard({this.data});
+  SoundCard({this.soundTitle, this.soundFile});
 
   @override
   Widget build(BuildContext context) {
@@ -14,11 +15,11 @@ class SoundCard extends StatelessWidget {
               child: InkWell(
                 splashColor: Colors.blue.withAlpha(30),
                 onTap: () {
-                  player.play('GeeseBeat.mp3');
+                  player.play(soundFile);
                 },
                 child: Container(
                   height: 100,
-                  child: Text(data),
+                  child: Text(soundTitle),
                 ),
               ),
             );

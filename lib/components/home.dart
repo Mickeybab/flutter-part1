@@ -12,12 +12,16 @@ class Home extends StatelessWidget {
       child: Column(
         children: <Widget>[
           SoundRow(
-            data1: "data1",
-            data2: "data2",
+            soundTitle1: "Geese Beat",
+            soundFile1: "sound/GeeseBeat.mp3",
+            soundTitle2: "Turtle Moan",
+            soundFile2: "sound/TurtleMoan.wav",
           ),
           SoundRow(
-            data1: "data3",
-            data2: "data4",
+            soundTitle1: "Knock",
+            soundFile1: "sound/Knock.wav",
+            soundTitle2: "Funny Sounds",
+            soundFile2: "sound/FunnySounds.wav",
           ),
         ],
       ),
