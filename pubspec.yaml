@@ -30,8 +30,7 @@ dependencies:
   device_info: ^0.4.0+1
   platform: ^2.2.1
   custom_switch: ^0.0.1
-
-
+  shared_preferences: ^0.5.12+4
 
 
   # The following adds the Cupertino Icons font to your application.
