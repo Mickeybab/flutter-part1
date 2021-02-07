@@ -53,12 +53,15 @@ class _TakePicturePageState extends State<TakePicturePage> {
           }
         },
       ),
-      FlatButton(
-        child: Text("Take picture"),
-        onPressed: () {
-          _takePicture(context);
-        },
-      )
+      Align(
+        alignment: Alignment.bottomCenter,
+        child: FlatButton(
+          child: Text("Take picture"),
+          onPressed: () {
+            _takePicture(context);
+          },
+        ),
+      ),
     ]);
   }
 }
