@@ -53,18 +53,18 @@ class _TakePicturePageState extends State<TakePicturePage> {
           }
         },
       ),
-      Container(
-          child: FlatButton(
-            child: Text(
-              "Take picture",
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            onPressed: () {
-              _takePicture(context);
-            },
-          ),
-          decoration: BoxDecoration(
-              color: Colors.orange, borderRadius: BorderRadius.circular(12.0)))
+      Align(
+          alignment: Alignment.bottomCenter,
+          child: Container(
+              child: FlatButton(
+                child: Text("Take picture"),
+                onPressed: () {
+                  _takePicture(context);
+                },
+              ),
+              decoration: BoxDecoration(
+                  color: Colors.orange,
+                  borderRadius: BorderRadius.circular(12.0))))
     ]);
   }
 }
