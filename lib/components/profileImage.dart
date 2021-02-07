@@ -8,11 +8,8 @@ class ProfileImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        decoration: BoxDecoration(
-            borderRadius: new BorderRadius.only(
-                topLeft: const Radius.circular(400.0),
-                topRight: const Radius.circular(400.0))),
         constraints: BoxConstraints.expand(height: 300.0),
-        child: img);
+        child:
+            ClipRRect(child: img, borderRadius: BorderRadius.circular(300.0)));
   }
 }

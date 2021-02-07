@@ -1,5 +1,5 @@
-import 'dart:developer';
 import 'dart:io';
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
@@ -18,15 +18,25 @@ class Profile extends StatefulWidget {
 class ProfileState extends State<Profile> {
   Image img = global.img;
 
+  _setImage(result) async {
+    bool exist = await File(result).exists();
+    log(exist.toString());
+    if (exist) {
+      global.img = Image.file(
+        File(result),
+      );
+      this.setState(() {
+        img = global.img;
+      });
+    }
+  }
+
   _getImage() async {
     final prefs = await SharedPreferences.getInstance();
     final key = 'profile_picture';
     final result = prefs.getString(key) ?? null;
     if (result != null) {
-      global.img = Image.file(File(result));
-      this.setState(() {
-        img = global.img;
-      });
+      _setImage(result);
     }
   }
 
@@ -47,10 +57,7 @@ class ProfileState extends State<Profile> {
           MaterialPageRoute(
               builder: (context) => TakePicturePage(camera: camera)));
 
-      global.img = Image.file(File(result));
-      this.setState(() {
-        img = global.img;
-      });
+      _setImage(result);
 
       final prefs = await SharedPreferences.getInstance();
       final key = 'profile_picture';
