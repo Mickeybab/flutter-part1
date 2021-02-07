@@ -2,7 +2,7 @@ library my_prj.globals;
 
 import 'package:flutter/material.dart';
 
-import 'myTheme.dart';
+import '../components/myTheme.dart';
 
 MyTheme currentTheme = MyTheme();
 

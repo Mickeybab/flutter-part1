@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:custom_switch/custom_switch.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-import 'global.dart' as global;
+import '../config/global.dart' as global;
 
 class SettingsScreen extends StatefulWidget {
   @override
@@ -11,13 +11,34 @@ class SettingsScreen extends StatefulWidget {
 class _SettingsScreenState extends State<SettingsScreen> {
   bool status = false;
 
+  _changeMode(value) async {
+    this.setState(() {
+      status = value;
+    });
+    global.currentTheme.switchTheme();
+
+    final prefs = await SharedPreferences.getInstance();
+    final key = 'dark_mode';
+    prefs.setInt(key, value ? 1 : 0);
+  }
+
+  _readMode() async {
+    final prefs = await SharedPreferences.getInstance();
+    final key = 'dark_mode';
+    final value = prefs.getInt(key) ?? 0;
+    this.setState(() {
+      status = value == 1 ? true : false;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _readMode();
+  }
+
   @override
   Widget build(BuildContext context) {
-    if (global.currentTheme.currentTheme() == ThemeMode.dark) {
-      this.setState(() {
-        status = true;
-      });
-    }
     return Container(
         color: Color(0xFFBD40),
         constraints: BoxConstraints.expand(),
@@ -28,15 +49,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 SizedBox(
                   width: 40.0,
                 ),
-                CustomSwitch(
+                Switch(
                   activeColor: Colors.orange,
-                  value: status,
-                  onChanged: (value) {
-                    this.setState(() {
-                      status = value;
-                    });
-                    global.currentTheme.switchTheme();
-                  },
+                  value: this.status,
+                  onChanged: (value) => _changeMode(value),
                 ),
                 SizedBox(
                   width: 40.0,

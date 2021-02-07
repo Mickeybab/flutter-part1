@@ -24,9 +24,8 @@ dependencies:
   flutter:
     sdk: flutter
   audioplayers: ^0.10.0
-  camera:
-  path_provider:
-  path:
+  camera: ^0.5.7+2
+  image_picker: ^0.6.2+3
   device_info: ^0.4.0+1
   platform: ^2.2.1
   custom_switch: ^0.0.1

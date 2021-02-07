@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_epitech/components/soundRow.dart';
-import 'soundRow.dart';
+import '../components/soundRow.dart';
 
 class Home extends StatelessWidget {
   Future<double> get _height => Future<double>.value(1000);

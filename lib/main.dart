@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-import 'components/home.dart';
-import 'components/profile.dart';
-import 'components/settings.dart';
-import 'components/global.dart' as global;
+import 'screens/home.dart';
+import 'screens/profile.dart';
+import 'screens/settings.dart';
+import 'config/global.dart' as global;
 
 void main() async {
   runApp(MyApp());
 }
 
-/// This is the main application widget.
 class MyApp extends StatefulWidget {
   @override
   MyAppState createState() => MyAppState();
@@ -18,9 +18,20 @@ class MyApp extends StatefulWidget {
 class MyAppState extends State<MyApp> {
   static const String _title = 'Epitech';
 
+  _readMode() async {
+    final prefs = await SharedPreferences.getInstance();
+    final key = 'dark_mode';
+    final value = prefs.getInt(key) ?? 0;
+    if ((value == 1 && global.currentTheme.currentTheme() == ThemeMode.light) ||
+        (value == 0 && global.currentTheme.currentTheme() == ThemeMode.dark)) {
+      global.currentTheme.switchTheme();
+    }
+  }
+
   @override
   void initState() {
     super.initState();
+    _readMode();
     global.currentTheme.addListener(() {
       setState(() {});
     });
@@ -38,7 +49,6 @@ class MyAppState extends State<MyApp> {
   }
 }
 
-/// This is the stateful widget that the main application instantiates.
 class MyStatefulWidget extends StatefulWidget {
   MyStatefulWidget({Key key}) : super(key: key);
 
@@ -46,7 +56,6 @@ class MyStatefulWidget extends StatefulWidget {
   _MyStatefulWidgetState createState() => _MyStatefulWidgetState();
 }
 
-/// This is the private State class that goes with MyStatefulWidget.
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
 
