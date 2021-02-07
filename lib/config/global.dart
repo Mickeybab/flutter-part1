@@ -18,3 +18,5 @@ MyTheme currentTheme = MyTheme();
 
 ThemeData darkTheme = ThemeData.dark();
 ThemeData lightTheme = ThemeData.light();
+
+Image img = Image(image: AssetImage('assets/img/profilepicture.png'));
