@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
@@ -20,7 +19,6 @@ class ProfileState extends State<Profile> {
 
   _setImage(result) async {
     bool exist = await File(result).exists();
-    log(exist.toString());
     if (exist) {
       global.img = Image.file(
         File(result),
