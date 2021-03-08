@@ -56,8 +56,11 @@ class _TakePicturePageState extends State<TakePicturePage> {
       Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-              child: FlatButton(
+              child: TextButton(
                 child: Text("Take picture"),
+                style: TextButton.styleFrom(
+                  primary: Colors.white,
+                ),
                 onPressed: () {
                   _takePicture(context);
                 },

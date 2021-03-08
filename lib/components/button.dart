@@ -9,7 +9,13 @@ class MyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: FlatButton(
+      child: TextButton(
+        style: TextButton.styleFrom(
+          primary: Colors.white,
+          backgroundColor: Colors.orange,
+          shadowColor: Colors.grey,
+          elevation: 5,
+        ),
         child: Padding(
           child: Text(
             this.text,
@@ -20,11 +26,7 @@ class MyButton extends StatelessWidget {
           ),
           padding: EdgeInsets.all(10.0),
         ),
-        color: Colors.orange,
         onPressed: this.onPress,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12.0),
-        ),
       ),
       decoration: BoxDecoration(boxShadow: [
         BoxShadow(

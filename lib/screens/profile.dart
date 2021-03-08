@@ -65,14 +65,15 @@ class ProfileState extends State<Profile> {
     return Container(
         color: Color(0xFFBD40),
         constraints: BoxConstraints.expand(),
-        child: Column(
-          children: [
+        child: SingleChildScrollView(
+            child: Column(
+          children: <Widget>[
             ProfileImage(img: img),
             MyButton(
               text: "Changer l'image",
               onPress: _showCamera,
             )
           ],
-        ));
+        )));
   }
 }
