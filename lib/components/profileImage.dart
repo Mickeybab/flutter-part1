@@ -8,8 +8,8 @@ class ProfileImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        constraints: BoxConstraints.expand(height: 300.0),
+        constraints: BoxConstraints.expand(height: 150.0),
         child:
-            ClipRRect(child: img, borderRadius: BorderRadius.circular(300.0)));
+            ClipRRect(child: img, borderRadius: BorderRadius.circular(150.0)));
   }
 }
