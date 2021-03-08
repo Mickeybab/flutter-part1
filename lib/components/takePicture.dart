@@ -58,9 +58,6 @@ class _TakePicturePageState extends State<TakePicturePage> {
           child: Container(
               child: TextButton(
                 child: Text("Take picture"),
-                style: TextButton.styleFrom(
-                  primary: Colors.white,
-                ),
                 onPressed: () {
                   _takePicture(context);
                 },
