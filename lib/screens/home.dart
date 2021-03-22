@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_epitech/components/soundRow.dart';
 import '../components/soundRow.dart';
-import '../components/searchbar.dart';
 
 class Home extends StatelessWidget {
   Future<double> get _height => Future<double>.value(1000);
@@ -18,7 +17,6 @@ class Home extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: <Widget>[
-                  AnimatedSearchBar(),
                   SoundRow(
                     soundTitle1: "Geese Beat",
                     soundFile1: "sound/GeeseBeat.mp3",
