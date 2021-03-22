@@ -34,7 +34,7 @@ class SoundDetailsState extends State<SoundDetails> {
           color: Colors.blue,
           elevation: 0,
           child: Padding(
-            padding: EdgeInsets.only(top: 300.0),
+            padding: EdgeInsets.only(top: 150.0),
             child: Column(
               children: <Widget>[
                 Text(
