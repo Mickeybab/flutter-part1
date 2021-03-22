@@ -5,7 +5,6 @@ class SoundCard extends StatelessWidget {
   final String soundTitle;
   final String soundFile;
   final player = AudioCache();
-
   SoundCard({this.soundTitle, this.soundFile});
 
   @override

@@ -46,11 +46,10 @@ class _TakePicturePageState extends State<TakePicturePage> {
       FutureBuilder(
         future: _initializeCameraControllerFuture,
         builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.done) {
+          if (snapshot.connectionState == ConnectionState.done)
             return CameraPreview(_cameraController);
-          } else {
+          else
             return Center(child: CircularProgressIndicator());
-          }
         },
       ),
       Align(

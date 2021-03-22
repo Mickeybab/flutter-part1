@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_epitech/components/navBar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'screens/home.dart';
-import 'screens/profile.dart';
-import 'screens/settings.dart';
+import 'components/appScaffold.dart';
 import 'config/global.dart' as global;
 
 void main() async {
@@ -59,12 +58,6 @@ class MyStatefulWidget extends StatefulWidget {
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
 
-  static List<Widget> _widgetOptions = <Widget>[
-    Home(),
-    Profile(),
-    SettingsScreen()
-  ];
-
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -73,39 +66,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Epitech',
-          style: TextStyle(
-              color: Colors.orange, fontWeight: FontWeight.bold, fontSize: 30),
-        ),
-        backgroundColor: Color(0xFFBD40),
-        elevation: 0,
-      ),
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
-            label: 'Profile',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.white,
-        backgroundColor: Colors.orange,
-        onTap: _onItemTapped,
-      ),
+    return AppScaffold(
+      onTap: _onItemTapped,
+      selectedIndex: _selectedIndex,
     );
   }
 }
