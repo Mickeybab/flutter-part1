@@ -1,38 +1,42 @@
-import 'package:flutter/material.dart';
-import 'package:audioplayers/audio_cache.dart';
-import '../screens/soundDetails.dart';
 
-class SoundCard extends StatelessWidget {
+import 'package:audioplayers/audio_cache.dart';
+import 'package:flutter/material.dart';
+
+class SoundDetails extends StatefulWidget {
   final String soundTitle;
   final String soundFile;
   final player = AudioCache();
-  SoundCard({this.soundTitle, this.soundFile});
+
+
+  SoundDetails({
+    this.soundTitle,
+    this.soundFile
+  });
+
+  @override
+  SoundDetailsState createState() => SoundDetailsState();
+}
+
+class SoundDetailsState extends State<SoundDetails> {
+
+  @override
+  void initState() {
+    
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: EdgeInsets.all(20.0),
-        padding: EdgeInsets.all(10.0),
-        decoration: new BoxDecoration(
-          color: Colors.blue,
-          borderRadius: BorderRadius.circular(20.0),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black,
-              spreadRadius: 0,
-              blurRadius: 2,
-              offset: Offset(2, 2), // changes position of shadow
-            ),
-          ],
-        ),
-        height: 100,
+        color: Color(0xFFBD40),
+        constraints: BoxConstraints.expand(),
         child: Card(
           color: Colors.blue,
           elevation: 0,
           child: Column(
             children: <Widget>[
               Text(
-                soundTitle,
+                widget.soundTitle,
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               Container(
@@ -54,13 +58,7 @@ class SoundCard extends StatelessWidget {
                 child: InkWell(
                   splashColor: Colors.blue,
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => SoundDetails(
-                        soundFile: soundFile,
-                        soundTitle: soundTitle,
-                      )),
-                    );
+                    widget.player.play(widget.soundFile);
                   },
                   child: Icon(
                     Icons.play_arrow,
@@ -71,6 +69,7 @@ class SoundCard extends StatelessWidget {
               ),
             ],
           ),
-        ));
+        ),
+      );
   }
 }
