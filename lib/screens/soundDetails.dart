@@ -33,43 +33,46 @@ class SoundDetailsState extends State<SoundDetails> {
         child: Card(
           color: Colors.blue,
           elevation: 0,
-          child: Column(
-            children: <Widget>[
-              Text(
-                widget.soundTitle,
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              Container(
-                width: 40,
-                height: 40,
-                margin: EdgeInsets.only(top: 10.0),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.white,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black,
-                      spreadRadius: 0,
-                      blurRadius: 2,
-                      offset: Offset(2, 2), // changes position of shadow
-                    ),
-                  ],
+          child: Padding(
+            padding: EdgeInsets.only(top: 300.0),
+            child: Column(
+              children: <Widget>[
+                Text(
+                  widget.soundTitle,
+                  style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                child: InkWell(
-                  splashColor: Colors.blue,
-                  onTap: () {
-                    widget.player.play(widget.soundFile);
-                  },
-                  child: Icon(
-                    Icons.play_arrow,
-                    size: 30,
-                    color: Colors.black,
+                Container(
+                  width: 40,
+                  height: 40,
+                  margin: EdgeInsets.only(top: 10.0),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black,
+                        spreadRadius: 0,
+                        blurRadius: 2,
+                        offset: Offset(2, 2), // changes position of shadow
+                      ),
+                    ],
+                  ),
+                  child: InkWell(
+                    splashColor: Colors.blue,
+                    onTap: () {
+                      widget.player.play(widget.soundFile);
+                    },
+                    child: Icon(
+                      Icons.play_arrow,
+                      size: 30,
+                      color: Colors.black,
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
           ),
         ),
-      );
+      )
+    );
   }
 }
